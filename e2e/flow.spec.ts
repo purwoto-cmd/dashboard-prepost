@@ -1,6 +1,9 @@
 import { test, expect } from "@playwright/test";
-import { resolve } from "node:path";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const FIX = resolve(__dirname, "..", "fixtures");
 
 test.describe("LPJ analytics happy path", () => {
